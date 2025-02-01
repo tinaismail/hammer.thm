@@ -16,6 +16,7 @@ Open browser and navigate to hammer.thm:1337
 ```
 gobuster -u http://hammer.thm:1337 -w Tools/wordlists/dirbuster/directory-list-1.0.txt dir
 ```
+![](Assets/gobuster.PNG)
 ## Sed to substitute hmr_ at the beginning of each directory in the list
 ```
 cp Tools/wordlists/dirbuster/directory-list-1.0.txt list.txt
