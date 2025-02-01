@@ -30,7 +30,7 @@ gobuster -u http://hammer.thm:1337 -w list.txt dir
 ```
 Which gives us the following result:
 ![](Assets/hmr_gobuster.PNG)
-
+In hmr_logs there is a reference to the user tester@hammer.thm. Great! Let's use that in our reset_password feature.
 ## Crunch to create OTP list for bruteforcing
 From the reset_password.php page, we know it's expecting a 4 digit OTP code
 ```
