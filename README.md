@@ -28,7 +28,8 @@ Then use gobuster again with the updated directories list:
 ```
 gobuster -u http://hammer.thm:1337 -w list.txt dir
 ```
-Which gives us 
+Which gives us the following result:
+![](Assets/hmr_gobuster.PNG)
 
 ## Crunch to create OTP list for bruteforcing
 From the reset_password.php page, we know it's expecting a 4 digit OTP code
