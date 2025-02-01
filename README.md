@@ -20,16 +20,22 @@ gobuster -u http://hammer.thm:1337 -w Tools/wordlists/dirbuster/directory-list-1
 ```
 cp Tools/wordlists/dirbuster/directory-list-1.0.txt list.txt
 ```
-then
+Now to format the entries:
 ```
 sed -i 's/^/hmr_/' list.txt
 ```
+Then use gobuster again with the updated directories list:
+```
+gobuster -u http://hammer.thm:1337 -w list.txt dir
+```
+Which gives us 
 
 ## Crunch to create OTP list for bruteforcing
 From the reset_password.php page, we know it's expecting a 4 digit OTP code
 ```
 crunch 4 4 -o otp.txt -t %%%% -s 0000 -e 9999
 ```
+Note: In hindsight I could have made the range 1000 to 9999 instead, since there were no valid codes from 0000 to 1000
 
 ## Use script.py to enumerate 
 Challenges: The session ID has a timeout of 5 requests, so I had to keep regenerating session IDs with a POST request to index.php every 5 requests
